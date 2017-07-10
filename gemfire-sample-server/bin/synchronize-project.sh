@@ -18,7 +18,7 @@ mkdir -p $cluster
 echo " "
 echo "build project : complete"
 
-cp $projectRoot/gemfire-config-service/target/*.jar $lib
+cp $projectRoot/gemfire-sample-code/target/*.jar $lib
 cp $serverRoot/config/* $cluster
 cp $lib/* $cluster
 (cd $serverRoot && zip -r cluster.zip cluster)

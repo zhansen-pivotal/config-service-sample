@@ -17,6 +17,7 @@ vf.gf.dmn-events.txt
 vf.gf.dmn-license.cfg
 .mvn
 mvnw*
+cluster.zip
 
 
 ######################
@@ -32,6 +33,9 @@ doc/
 .gradle/
 /bin/
 target/
+lib
+data
+cluster
 
 ######################
 # JetBrain's Idea specific stuff

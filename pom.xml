@@ -12,7 +12,7 @@
     <description>GemFire Demo's parent project</description>
 
     <modules>
-        <module>gemfire-config-service</module>
+        <module>gemfire-sample-code</module>
     </modules>
 
 </project>
