@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-root=`cd ../; pwd`
+root=`cd ../../; pwd`
 
 datadir=$root/data
 

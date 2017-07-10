@@ -12,18 +12,10 @@ serverName=server1
 
 root=`cd ../; pwd`
 
-config=$root/config
-
 datadir=$root/data
 
 serverdir=$root/data/$serverName
 mkdir -p $serverdir
-
-## For MAVEN
-cp=$root/lib/*
-
-## Config
-cp=$cp
 
 jvmargs="--J=-XX:+UseParNewGC --J=-XX:+UseConcMarkSweepGC --J=-XX:CMSInitiatingOccupancyFraction=60"
 gfargs="--J=-Dgemfire.statistic-archive-file=$hn.gfs --J=-Dgemfire.archive-file-size-limit=100 --J=-Dgemfire.archive-disk-space-limit=1000  --start-rest-api=true --http-service-port=8888 --http-service-bind-address=localhost"
