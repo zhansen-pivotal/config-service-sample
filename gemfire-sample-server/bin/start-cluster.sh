@@ -36,6 +36,9 @@ gfsh -e "connect" \
 -e "list regions --member=server2" \
 -e "list deployed" \
 -e "list functions --member=server2" \
--e "create region --name=RegionA --type=REPLICATE" \
--e "describe config --member=locator" \
--e "describe config --member=server1 --hide-defaults"
+-e "create region --name=RegionB --type=REPLICATE" \
+-e "status cluster-config-service" \
+-e "status locator --name=locator" \
+-e "status server --name=server1" \
+-e "status server --name=server2"
+
