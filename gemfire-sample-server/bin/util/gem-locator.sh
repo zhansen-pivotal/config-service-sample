@@ -5,12 +5,12 @@ if [ -z "$1" ]; then
 fi
 
 ## Locators to connect to distributed system
-loc=$1[10334]
+loc=localhost[10334],$1[$2]
 
 ## Hostname to start locator with.
 hn=`hostname`
 
-locatorName=locator
+locatorName=$3
 
 root=`cd ../; pwd`
 
@@ -22,5 +22,5 @@ mkdir -p $locatordir
 gfargs="--J=-Dgemfire.statistic-archive-file=$hn.gfs --J=-Dgemfire.archive-file-size-limit=100 --J=-Dgemfire.archive-disk-space-limit=1000  --J=-Dgemfire.http-service-port=7070"
 
 
-gfsh start locator --name=$locatorName --locators=$loc --dir=$locatordir --initial-heap=1g --max-heap=1g $jvmargs $gfargs --enable-cluster-configuration=true --load-cluster-configuration-from-dir=true
+gfsh start locator --name=$locatorName --port=$2 --locators=$loc --dir=$locatordir --initial-heap=1g --max-heap=1g $jvmargs $gfargs --enable-cluster-configuration=true --load-cluster-configuration-from-dir=true
 
