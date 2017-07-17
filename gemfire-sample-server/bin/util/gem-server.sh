@@ -8,7 +8,7 @@ loc=$1[10334]
 
 hn=`hostname`
 
-serverName=server1
+serverName=$2
 
 root=`cd ../; pwd`
 

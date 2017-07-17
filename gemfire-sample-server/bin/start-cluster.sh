@@ -25,14 +25,15 @@ sleep 2
 
 echo " "
 echo "starting a server for testing..."
-util/gem-server.sh localhost
+util/gem-server.sh localhost server1
 sleep 5
 
 echo " "
-echo "starting another server for testing..."
-echo " "
-util/gem-server2.sh localhost
-sleep 10
+echo "starting a server for testing..."
+util/gem-server.sh localhost server2
+sleep 5
+
+
 
 gfsh -e "connect" \
 -e "list regions --member=server2" \
