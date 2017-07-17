@@ -9,5 +9,7 @@
 
     <pdx read-serialized="true" persistent="true" disk-store-name="pdx_meta_data"/>
 
+    <region name="RegionA" refid="REPLICATE" />
+
     <resource-manager critical-heap-percentage="80" eviction-heap-percentage="75"/>
 </cache>
