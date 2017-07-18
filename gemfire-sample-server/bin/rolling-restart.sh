@@ -13,7 +13,6 @@ echo "restarting locator"
 util/gem-locator.sh localhost 10334 locator1
 sleep 5
 
-
 gfsh -e "connect" \
 -e "stop server --name=server1"
 
