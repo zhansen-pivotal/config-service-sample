@@ -16,7 +16,7 @@ root=`cd ../; pwd`
 
 datadir=$root/data
 locatordir=$root/data/$locatorName
-mkdir -p $locatordir
+mkdir -p $locatordir/cluster_config/cluster
 
 ## Standard Gemfire and Java args for both jvm tuning and stats
 gfargs="--J=-Dgemfire.statistic-archive-file=$hn.gfs --J=-Dgemfire.archive-file-size-limit=100 --J=-Dgemfire.archive-disk-space-limit=1000  --J=-Dgemfire.http-service-port=7070"

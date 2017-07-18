@@ -3,8 +3,14 @@
 serverRoot=`cd ../; pwd`
 cluster=$serverRoot/cluster
 
-locatorConfig=$serverRoot/data/locator1/cluster_config/cluster
-cp $cluster/* $locatorConfig
+locatorConfig=$serverRoot/data/locator1/cluster_config
+
+(cd $locatorConfig && gfsh -e "connect" -e "export cluster-configuration --zip-file-name=export.zip")
+rm -r $locatorConfig/cluster
+(cd $locatorConfig && unzip export.zip)
+cp $cluster/* $locatorConfig/cluster
+rm $locatorConfig/export.zip
+
 echo "updating gemfire with changes"
 sleep 2
 

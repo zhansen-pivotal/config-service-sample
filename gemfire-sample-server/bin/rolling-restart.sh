@@ -5,18 +5,14 @@
 gfsh -e "connect" \
 -e "stop locator --name=locator1"
 
+gfsh -e "connect" \
+-e "stop locator --name=locator1"
+
 echo ""
 echo "restarting locator"
 util/gem-locator.sh localhost 10334 locator1
 sleep 5
 
-gfsh -e "connect" \
--e "stop locator --name=locator2"
-
-echo ""
-echo "restarting locator"
-util/gem-locator.sh localhost 10335 locator2
-sleep 5
 
 gfsh -e "connect" \
 -e "stop server --name=server1"
